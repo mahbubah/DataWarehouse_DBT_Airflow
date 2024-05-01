@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
-from sqlalchemy import text
 import json
+from sqlalchemy import text
 from sqlalchemy import create_engine
 import numpy as np
 
@@ -15,26 +15,6 @@ engine = create_engine(f'postgresql+psycopg2://{connection_params['user']}:
                        {connection_params['port']}/{connection_params['database']}')
 '''
 engine = create_engine('postgresql+psycopg2://postgres:123456@localhost:5432/traffic')
-
-VEHICLE_SCHEMA = "timed_vehicle_schema.sql"
-TRAJECTORIES_SCHEMA = "trajectory_schema.sql"
-
-
-def create_table():
-    try:
-        with engine.connect() as conn:
-            for name in [TRAJECTORIES_SCHEMA,VEHICLE_SCHEMA]:
-                
-                with open(f'/opt/psql/{name}', "r") as file:
-                    query = text(file.read())
-                    conn.execute(query)
-        print("Successfull")
-    except Exception as e:
-        print("Error creating table",e)
-        sys.exit(e)
-
-
-# create_table()
 
 def insert_to_table(json_stream :str, table_name: str,from_file=False ):
     try:
@@ -59,5 +39,3 @@ def insert_to_table(json_stream :str, table_name: str,from_file=False ):
     except Exception as e:
         print(f"error while inserting to table: {e}")  
         sys.exit(e)
-
-

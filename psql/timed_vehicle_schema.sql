@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS vehicles
 (
+    /*"row_no" SERIAL NOT NULL,*/
     "id" SERIAL NOT NULL,
     "track_id" TEXT NOT NULL,
     "lat" TEXT NOT NULL,

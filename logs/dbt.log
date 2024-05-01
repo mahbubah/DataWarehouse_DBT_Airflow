@@ -1,0 +1,89 @@
+[0m17:39:26.418052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607D65C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607D65AF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607D65CA0>]}
+
+
+============================== 17:39:26.475277 | c4e17960-bf80-4459-9251-d9733283c0e4 ==============================
+[0m17:39:26.475277 [info ] [MainThread]: Running with dbt=1.7.13
+[0m17:39:26.481811 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\neima\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt init', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:39:26.488252 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': WindowsPath('C:/Users/neima/.dbt')}
+[0m17:39:26.494254 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m17:39:49.794506 [debug] [MainThread]: Starter project path: C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\include\starter_project
+[0m17:39:50.047551 [info ] [MainThread]: 
+Your new dbt project "dbt_proj" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:39:50.052732 [info ] [MainThread]: Setting up your profile.
+[0m17:41:37.386363 [error] [MainThread]: Encountered an error:
+
+[0m17:41:37.780117 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\cli\requires.py", line 91, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\cli\requires.py", line 76, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\cli\main.py", line 515, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\task\init.py", line 344, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\task\init.py", line 264, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\task\init.py", line 181, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\task\init.py", line 165, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\task\init.py", line 131, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\click\termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\click\termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m17:41:37.794085 [debug] [MainThread]: Command `dbt init` failed at 17:41:37.793118 after 131.66 seconds
+[0m17:41:37.795076 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607D65B50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607D67D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B607B02F60>]}
+[0m17:41:37.796077 [debug] [MainThread]: Flushing usage events
+[0m17:41:45.767124 [debug] [MainThread]: Error sending anonymous usage statistics. Disabling tracking for this execution. If you wish to permanently disable tracking, see: https://docs.getdbt.com/reference/global-configs#send-anonymous-usage-stats.
+[0m17:42:07.208138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3EF9910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3E28920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3C868A0>]}
+
+
+============================== 17:42:07.215439 | e777719f-594a-4743-a0d6-107d44e3b692 ==============================
+[0m17:42:07.215439 [info ] [MainThread]: Running with dbt=1.7.13
+[0m17:42:07.217442 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\neima\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt init', 'send_anonymous_usage_stats': 'True'}
+[0m17:42:25.281802 [debug] [MainThread]: Starter project path: C:\Users\neima\Desktop\week-2\DataWarehouse_DBT_Airflow\.venv\Lib\site-packages\dbt\include\starter_project
+[0m17:42:26.484954 [info ] [MainThread]: 
+Your new dbt project "dbt_proj" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:42:26.490738 [info ] [MainThread]: Setting up your profile.
+[0m17:43:11.946870 [info ] [MainThread]: Profile dbt_proj written to C:\Users\neima\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:43:11.951844 [debug] [MainThread]: Command `dbt init` succeeded at 17:43:11.951844 after 64.93 seconds
+[0m17:43:11.953856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3C868A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3AF20F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000153B3F34320>]}
+[0m17:43:11.955836 [debug] [MainThread]: Flushing usage events
